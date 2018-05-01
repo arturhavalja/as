@@ -4,6 +4,8 @@
 
   $(window).on('load', function() {
 
+    renderPage ();
+
   /*Page Loader active
     ========================================================*/
     $('#preloader').fadeOut();
