@@ -70,11 +70,11 @@ $events = getEventsFromJson();
                   schedules
                 </a>
               </li>
-              <li class="nav-item">
+  <!--             <li class="nav-item">
                 <a class="nav-link" href="#team">
                   Speakers
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="#gallery">
                   Gallery
@@ -90,11 +90,11 @@ $events = getEventsFromJson();
                   Sponsors
                 </a>
               </li>
-              <li class="nav-item">
+   <!--            <li class="nav-item">
                 <a class="nav-link" href="#pricing">
                   pricing
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="#google-map-area">
                   Contact
@@ -127,9 +127,9 @@ $events = getEventsFromJson();
           <li>
             <a class="page-scroll" href="#sponsors">Sponsors</a>
           </li>
-          <li>
+     <!--      <li>
             <a class="page-scroll" href="#pricing">pricing</a>
-          </li>
+          </li> -->
           <li>
             <a class="page-scroll" href="#google-map-area">Contact</a>
           </li>
@@ -350,12 +350,20 @@ $events = getEventsFromJson();
         <div class="row">
           <!-- Counter Item -->
           <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
-            <div class="counter wow fadeInRight" data-wow-delay="0.3s">
-              <div class="icon"><i class="lni-map"></i></div>
-              <p>Tirana Business Park</p>
-              <span>RINAS ROAD , B07, 1000 Tirana Albania</span>
+            <a href="http://maps.google.com/maps?q=41.409404,19.705865" target="_blank" class="map-link">
+              <div class="counter wow fadeInRight" data-wow-delay="0.3s">
+                <div class="icon">
+                 
+                  <i class="lni-map"></i>
+                 
+                </div>
+                <p>
+                    Tirana Business Park
+                </p>
+                <span>RINAS ROAD , B07, 1000 Tirana Albania</span>
+              </div>
             </div>
-          </div>
+            </a>
           <!-- Counter Item -->
           <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
             <div class="counter wow fadeInRight" data-wow-delay="0.6s">
@@ -489,7 +497,7 @@ $events = getEventsFromJson();
     <!-- Schedule Section End -->
 
     <!-- Team Section Start -->
-    <section id="team" class="section-padding text-center">
+    <section id="team" style="display: none" class="section-padding text-center">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -907,7 +915,7 @@ $events = getEventsFromJson();
     <!-- Sponsors Section End -->
 
     <!-- Ticket Pricing Area Start -->
-    <section id="pricing" class="section-padding">
+    <section id="pricing" style="display: none" class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-12">
