@@ -6,6 +6,27 @@
 
     renderPage ();
 
+
+    $('#subscribes').on('click', function (e) {
+
+      e.preventDefault ();
+      var email = $('#EMAIL').val();
+      email = email.trim();
+      if (email != '' && validateEmail(email)) {
+
+        $.post('./assets/php/requests.php', {action : "subscribe", email : email}, function (data) {
+
+              if (data == '"success"') {
+                  $('#EMAIL').val('');
+                  alert("Your subscribe request confimed !");
+              } else {
+                alert("This email exist !");
+              }
+        });
+      }
+
+    });
+
   /*Page Loader active
     ========================================================*/
     $('#preloader').fadeOut();
@@ -22,7 +43,7 @@
     /* ==========================================================================
        countdown timer
        ========================================================================== */
-     jQuery('#clock').countdown('2018/06/21',function(event){
+     jQuery('#clock').countdown('2018/05/07 09:00',function(event){
       var $this=jQuery(this).html(event.strftime(''
       +'<div class="time-entry days"><span>%-D</span> Days</div> '
       +'<div class="time-entry hours"><span>%H</span> Hours</div> '

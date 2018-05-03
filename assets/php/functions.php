@@ -16,8 +16,28 @@ function getEvents () {
 		$events[] = $row;
 	}
 
-
 	return $events;
+}
+
+function subscribe ($email) {
+
+	$email = trim($email, ' ');
+
+	if ($email == '') {
+		return 'Invalid data.';
+	}
+	$safe_email = $email;
+	//mysql_real_escape_string($safe_email);
+
+	$sql = "INSERT INTO as_subscribe (email) VALUES ('" . $safe_email . "')";
+
+	global $conn;
+	$result = mysqli_query($conn, $sql);
+	
+	if ($result == false) {
+		return 'fail';
+	}
+	return 'success';
 }
 
 

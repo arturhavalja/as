@@ -2217,3 +2217,11 @@ a.back-to-top:hover, a.back-to-top:focus {
   color: #fff;
   border-color: #fff;
 }
+
+#EMAIL {
+  color: black;
+}
+
+.site-info2  a {
+  color: #E91E63!important;
+}
