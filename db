@@ -1,0 +1,93 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 01, 2018 at 05:21 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `as_events_managments`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `as_competitiors`
+--
+
+CREATE TABLE `as_competitiors` (
+  `id` int(11) DEFAULT NULL,
+  `id_event` int(11) DEFAULT NULL,
+  `name` varchar(128) DEFAULT NULL,
+  `surname` varchar(128) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `image_url` varchar(128) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `as_events`
+--
+
+CREATE TABLE `as_events` (
+  `id` int(8) NOT NULL,
+  `date` date NOT NULL,
+  `address_name` varchar(128) NOT NULL,
+  `address_map` varchar(128) NOT NULL,
+  `ticket_url` varchar(128) NOT NULL,
+  `image_url` varchar(128) NOT NULL,
+  `qr_code_url` varchar(128) NOT NULL,
+  `description` varchar(1024) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `as_events`
+--
+
+INSERT INTO `as_events` (`id`, `date`, `address_name`, `address_map`, `ticket_url`, `image_url`, `qr_code_url`, `description`) VALUES
+(1, '2018-05-09', 'TBP', '59.120;46.29', 'test', '/test/test', '/test.test/test', 'this is a description test');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `as_competitiors`
+--
+ALTER TABLE `as_competitiors`
+  ADD KEY `id_event` (`id_event`);
+
+--
+-- Indexes for table `as_events`
+--
+ALTER TABLE `as_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `as_competitiors`
+--
+ALTER TABLE `as_competitiors`
+  ADD CONSTRAINT `as_competitiors_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `as_events` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
