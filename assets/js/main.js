@@ -4,7 +4,7 @@
 
   $(window).on('load', function() {
 
-    renderPage ();
+    //renderPage ();
 
 
     $('#subscribes').on('click', function (e) {
@@ -13,10 +13,11 @@
       var email = $('#EMAIL').val();
       email = email.trim();
       if (email != '' && validateEmail(email)) {
-
+  
         $.post('./assets/php/requests.php', {action : "subscribe", email : email}, function (data) {
-
-              if (data == '"success"') {
+              
+              var data = JSON.parse(data);
+              if (data == 'success"') {
                   $('#EMAIL').val('');
                   alert("Your subscribe request confimed !");
               } else {

@@ -1,0 +1,101 @@
+[
+	{
+		"id" : 1,
+		"time" : "7 May",
+		"day" : "Monday",
+		"schedule" : [
+			
+			{
+				"id" : 1,
+				"time" : "09:00 - 10:30",
+				"place" : "Tirana Business Park",
+				"title" : "Think, Work and Live Green Competition",
+				"subtitle" : " Part 1 – Introduction and team building",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			},
+
+			{
+				"id" : 2,
+				"time" : "10:00 – 11:00",
+				"place" : "Tirana Business Park",
+				"title" : "Official launching of Albanian Skills Week 2018 & Press Conference",
+				"subtitle" : " Part 1 – Introduction and team building",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			},
+
+			{
+				"id" : 3,
+				"time" : "10:00 – 14:20",
+				"place" : "Tirana Business Park",
+				"title" : "Training & Competition in Assembling Electrical Panels",
+				"subtitle" : "Powered by Schneider Electric & A BI ESSE",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			},
+
+			{
+				"id" : 4,
+				"time" : "14:30 – 17:00",
+				"place" : "Communication Progress",
+				"title" : "Road Map of Digital Skills Evolution",
+				"subtitle" : " powered by Communication Progress",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			}
+			
+		]
+	},
+
+	{
+		"id" : 2,
+		"time" : "8 May",
+		"day" : "Tuesday",
+		"schedule" : [
+			
+			{
+				"id" : 1,
+				"time" : "09:00 – 16:00",
+				"place" : "A BI ESSE",
+				"title" : "Form Cabling to Smart Home Soultions",
+				"subtitle" : " Practical Training & Open Doors @ A BI ESSE & Urmet",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			}
+			
+		]
+	},
+
+	{
+		"id" : 3,
+		"time" : "9 May",
+		"day" : "Wednesday",
+		"schedule" : [
+			
+			{
+				"id" : 1,
+				"time" : "09:00 – 10:30",
+				"place" : "Tirana Business Park",
+				"title" : "Think, Work and Live Green Competition",
+				"subtitle" : " Part 2 – Presentation of Concepts and Mentoring",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			},
+
+			{
+				"id" : 2,
+				"time" : "11.00 – 12:30",
+				"place" : "Polytechnic University of Tirana",
+				"title" : "Official launching of Albanian Skills Week 2018 & Press Conference",
+				"subtitle" : " powered by Schneider Electric & ITE Group",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			},
+
+			{
+				"id" : 3,
+				"time" : "14:00 – 15:00",
+				"place" : "Albesol",
+				"title" : "Meet young professionals at Albesol",
+				"subtitle" : "powered by Schneider Electric & Albesol",
+				"description" : "Prezantimi i konceptit në vend, Ndarja e ekipit dhe territorit, Buxheti, Vizitë në lokalet e TBP dhe konceptin e projektit"
+			}
+			
+		]
+	}
+
+]

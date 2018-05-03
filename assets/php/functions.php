@@ -26,12 +26,13 @@ function subscribe ($email) {
 	if ($email == '') {
 		return 'Invalid data.';
 	}
-	$safe_email = $email;
-	//mysql_real_escape_string($safe_email);
-
-	$sql = "INSERT INTO as_subscribe (email) VALUES ('" . $safe_email . "')";
-
+	
 	global $conn;
+
+	$safe_email = mysqli_real_escape_string($conn,$email);
+
+	$sql = "INSERT INTO as_subscribe (email) VALUES ('$safe_email')";
+
 	$result = mysqli_query($conn, $sql);
 	
 	if ($result == false) {
@@ -40,5 +41,13 @@ function subscribe ($email) {
 	return 'success';
 }
 
+
+function getEventsFromJson(){
+	$events = file_get_contents('assets/events.json');
+
+	$events = json_decode($events, true);
+
+	return $events;
+}
 
 ?>

@@ -1,3 +1,14 @@
+<?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include 'assets/php/functions.php';
+
+$events = getEventsFromJson();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -389,64 +400,36 @@
           <div class="schedule-tab-title col-md-3 col-lg-3 col-xs-12">
             <div class="table-responsive">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                
+                <?php 
+
+                  foreach ($events as $key => $event) {
+                    
+                    ?>
+                 
+
                 <li class="nav-item">
-                  <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#monday" role="tab" aria-controls="monday" aria-expanded="true">
+                  <a class="nav-link <?php echo ($key == 0) ? 'active' : '' ?>" id="<?php echo $event['day'] ?>-tab" data-toggle="tab" href="#<?php echo $event['day'] ?>" role="tab" aria-controls="<?php echo $event['day'] ?>" aria-expanded="true">
                     <div class="item-text">
-                      <h4>Monday</h4>
-                      <h5>7 May</h5>
+                      <h4><?php echo $event['day'] ?></h4>
+                      <h5><?php echo $event['time'] ?></h5>
                     </div>
                   </a>
                 </li>
+                
+                 <?php }
+                ?>
+
+
                 <li class="nav-item">
-                  <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab" aria-controls="tuesday">
+                  <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#saturday" role="tab" aria-controls="saturday">
                     <div class="item-text">
                       <h4>Tuesday</h4>
                       <h5>8 May</h5>
                     </div>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#wednesday" role="tab" aria-controls="wednesday">
-                    <div class="item-text">
-                      <h4>Wednesday</h4>
-                      <h5>9 May</h5>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab" aria-controls="thursday">
-                    <div class="item-text">
-                      <h4>Thursday</h4>
-                      <h5>10 May</h5>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="friday-tab" data-toggle="tab" href="#friday" role="tab" aria-controls="friday">
-                    <div class="item-text">
-                      <h4>friday</h4>
-                      <h5>11 May</h5>
-                    </div>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#saturday" role="tab" aria-controls="saturday">
-                    <div class="item-text">
-                      <h4>Saturday</h4>
-                      <h5>12 May</h5>
-                    </div>
-                  </a>
-                </li>
-<!-- 
-                <li class="nav-item">
-                  <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#sunday" role="tab" aria-controls="sunday">
-                    <div class="item-text">
-                      <h4>Sunday</h4>
-                      <h5>13 May</h5>
-                    </div>
-                  </a>
-                </li> -->
+                
 
               </ul>
             </div>
@@ -454,59 +437,50 @@
 
           <div class="schedule-tab-content col-md-9 col-lg-9 col-xs-12 clearfix">
             <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="monday" role="tabpanel" aria-labelledby="monday-tab">
-                <div id="accordion">
-        
-                </div>
-              </div>
 
-              <div class="tab-pane fade" id="tuesday" role="tabpanel" aria-labelledby="tuesday-tab">
-                <div id="accordion2">
+              <?php 
 
-                </div>
-              </div>
-              <div class="tab-pane fade" id="wednesday" role="tabpanel" aria-labelledby="wednesday-tab">
-                <div id="accordion3">
-   
-                </div>
-              </div>
-              <div class="tab-pane fade" id="thursday" role="tabpanel" aria-labelledby="thursday-tab">
-                <div id="accordion4">
+                    
+                  foreach ($events as $key => $event) {
+                    
+                    ?>
 
-                </div>
-              </div>
-              <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="friday-tab">
-                <div id="accordion5">
+          
+              <div class="tab-pane fade show <?php echo ($key == 0) ? 'active' : '' ?>" id="<?php echo $event['day'] ?>" role="tabpanel" aria-labelledby="<?php echo $event['day'] ?>-tab">
+                <div id="accordion<?php echo $key; ?>">
+                  
+                  <?php foreach ($event['schedule'] as $index => $data): ?>
+                    
+                  
 
-                </div>
-              </div>
-
-              <div class="tab-pane fade" id="saturday" role="tabpanel" aria-labelledby="saturday-tab">
-                <div id="accordion6">
-                  <div class="card">
-                    <div id="headingOne">
-                      <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <div class="images-box">
-                          <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
-                        </div>                     
-                        <span class="time">10am - 12:30pm</span>
-                        <h4>Web Design Principles and Best Practices</h4>
-                        <h5 class="name">David Warner</h5>
+                    <div class="card">
+                      <div id="heading<?php echo $key.$data['id'] ?>">
+                        <div class="collapsed card-header" data-toggle="collapse" data-target="#collapse<?php echo $key.$data['id']; ?>" aria-expanded="false" aria-controls="collapseOne<?php echo $key; ?>">
+                          <div class="images-box">
+                            <img class="img-fluid" src="assets/img/speaker/speakers-1.jpg" alt="">
+                          </div>                     
+                          <span class="time"><?php echo $data['time'] ?></span>
+                          <h4><?php echo $data['title'] ?></h4>
+                          <h5 class="name"><?php echo $data['subtitle'] ?></h5>
+                        </div>
                       </div>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                        <p>Consectetur adipisicing elit. Quod distinctio impedit sint accusantium ducimus lites consequuntur innobisl dolores saepe.Proin sit amet turpis lobortis.</p>
-                        <div class="location">
-                          <span>Location:</span> Hall 1 , Building A, Golden Street, Southafrica
+                      <div id="collapse<?php echo $key.$data['id']; ?>" class="collapse <?php echo ($index == 0) ? 'show' : '' ?>" aria-labelledby="heading<?php echo $key.$data['id'] ?>" data-parent="#accordion<?php echo $key; ?>">
+                        <div class="card-body">
+                          <p><?php echo $data['description'] ?></p>
+                          <div class="location">
+                            <span>Location:</span> <?php echo $data['place'] ?>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+
+                  <?php endforeach ?>
 
                 </div>
               </div>
-
+              
+               <?php }
+              ?>
             </div>
           </div>
         </div>
